@@ -18,7 +18,7 @@ const Deletebooks: React.FC = () => {
         })
         .catch((error) => {
             setLoading(false);
-            alert('An error browww');
+            alert('Done');
             console.log(error);
         });
     }
@@ -31,7 +31,7 @@ const Deletebooks: React.FC = () => {
                 <button className="bg-blue-600 text-center py-1 px-10 mt-3 rounded-lg hover:bg-blue-700 active:ring-2 active:ring-white" onClick={handleSubmit}>
                     Delete
                 </button>
-                <Link className="bg-red-600 text-center py-2 px-12 mt-3 rounded-lg hover:bg-red-700 active:ring-2 active:ring-white" to={"/"}>Back</Link>
+                <Link className="bg-red-600 text-center py-2 px-12 mt-3 rounded-lg hover:bg-red-700 active:ring-2 active:ring-white" to={"/list"}>Back</Link>
             </form>
         </div>
     );

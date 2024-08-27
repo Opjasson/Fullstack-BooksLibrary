@@ -22,7 +22,7 @@ const Home = () => {
                     <Link to={`/books/detailbooks/${book.id}`}>
                         {book.judul}
                     </Link>
-                    
+                    <img src={book.imageUrl}  alt="" />
                     <h2 className="sm:text-lg text-base font-medium">
                         {book.penerbit}
                     </h2>

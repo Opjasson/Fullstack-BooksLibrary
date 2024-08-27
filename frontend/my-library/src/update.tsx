@@ -38,6 +38,9 @@ const Updatedata = () => {
                                 Deskripsi
                             </th>
                             <th scope="col" className="px-6 py-3">
+                                Image
+                            </th>
+                            <th scope="col" className="px-6 py-3">
                                 Action
                             </th>
                         </tr>
@@ -62,6 +65,10 @@ const Updatedata = () => {
                                 
                                 <td className="px-6 py-4">
                                     {book.deskripsi}
+                                </td>
+
+                                <td className="px-6 py-4">
+                                    {book.imageUrl}
                                 </td>
                                 
                                     

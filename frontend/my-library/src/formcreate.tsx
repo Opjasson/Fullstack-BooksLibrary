@@ -21,7 +21,7 @@ const AddItemForm: React.FC = () => {
         const newItem = { name };
 
         try {
-            const response = await fetch("http://localhost:1226/authors/create", {
+            const response = await fetch("http://localhost:1225/authors/create", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

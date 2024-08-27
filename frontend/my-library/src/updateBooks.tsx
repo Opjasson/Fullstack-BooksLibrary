@@ -8,6 +8,7 @@ const Updatebookform: React.FC = () => {
         const [judul, setJudul] = useState<string>("");
         const [penerbit, setPenerbit] = useState<string>("");
         const [deskripsi, setDeskripsi] = useState<string>("");
+        const [imageUrl, setImage] = useState<string>("");
         const [error, setError] = useState<string | null>(null);
         const [success, setSuccess] = useState<string | null>(null);
         const [loading, setLoading] = useState(false);
@@ -22,6 +23,7 @@ const Updatebookform: React.FC = () => {
                 setJudul(Response.data.judul);
                 setPenerbit(Response.data.penerbit);
                 setDeskripsi(Response.data.deskripsi);
+                setImage(Response.data.imageUrl);
                 setLoading(false);
             }).catch((error) => {
                 setLoading(false);
@@ -41,13 +43,14 @@ const Updatebookform: React.FC = () => {
                 judul,
                 penerbit,
                 deskripsi,
+                imageUrl,
             };
             
             setLoading(true);
             axios.put(`http://localhost:1225/books/${id}`, data)
             .then(() => {
                 setLoading(false);
-                navigate('/');
+                navigate('/list');
             })
             .catch((error) => {
                 setLoading(false);
@@ -94,6 +97,15 @@ const Updatebookform: React.FC = () => {
                             id="Deskripsi"
                             value={deskripsi}
                             onChange={(e) => setDeskripsi(e.target.value)}
+                            required
+                            className="rounded-lg inline-block w-96 h-9 pl-2"
+                        />
+                        <label htmlFor="name">Image:</label>
+                        <input
+                            type="text"
+                            id="ImageUrl"
+                            value={imageUrl}
+                            onChange={(e) => setImage(e.target.value)}
                             required
                             className="rounded-lg inline-block w-96 h-9 pl-2"
                         />
